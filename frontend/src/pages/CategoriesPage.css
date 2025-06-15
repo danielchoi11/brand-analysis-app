@@ -1,0 +1,253 @@
+/* 카테고리 페이지 전체 스타일 */
+.categories-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+}
+
+.categories-main {
+  flex-grow: 1;
+  padding: 2rem 0;
+}
+
+.categories-main-container {
+  position: relative;
+  z-index: 2;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-top: 3em;
+}
+
+.categories-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.categories-header h1 {
+  font-size: 4em;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.categories-content {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  background-color: rgba(17, 17, 17, 0.7);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.category-sidebar {
+  flex: 0 0 250px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #333;
+}
+
+.category-sidebar h3 {
+  margin-bottom: 1.5rem;
+  color: #fff;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #333;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.category-list {
+  list-style: none;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: #111;
+  border: 1px solid #333;
+}
+
+.category-item:hover {
+  background-color: #222;
+  border-color: #ff1900;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 25, 0, 0.1);
+}
+
+.category-item.active {
+  background-color: #ff1900;
+  color: white;
+  border-color: #ff1900;
+}
+
+.category-item.active .brand-count {
+  background-color: white;
+  color: #ff1900;
+}
+
+.brand-count {
+  background-color: #222;
+  color: #ccc;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid #333;
+}
+
+.category-content {
+  flex: 1;
+}
+
+.active-category-container {
+  background-color: rgba(17, 17, 17, 0.8);
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid #333;
+}
+
+.category-content h2 {
+  margin-bottom: 2rem;
+  color: #ff1900;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #333;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.brand-card {
+  background-color: #111;
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  height: 100%;
+  color: #fff;
+}
+
+.brand-card:hover {
+  transform: translateY(-5px);
+  border-color: #ff1900;
+  box-shadow: 0 5px 15px rgba(255, 25, 0, 0.1);
+}
+
+.brand-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.brand-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.view-details {
+  margin-top: auto;
+  text-align: right;
+  font-size: 0.9rem;
+  color: #ff1900;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+}
+
+.brand-card:hover .view-details {
+  transform: translateX(5px);
+}
+
+.no-brands {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 5px;
+  color: #ccc;
+  border: 1px solid #333;
+  margin-top: 1rem;
+}
+
+/* 로더 스타일 */
+.loader {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: #ff1900;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.alert {
+  color: #ff1900;
+  margin: 1rem 0;
+  padding: 1rem;
+  text-align: center;
+  background-color: rgba(255, 25, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1200px) {
+  .categories-main-container {
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .categories-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .categories-content {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .category-sidebar {
+    flex: auto;
+    margin-bottom: 2rem;
+  }
+  
+  .brands-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .categories-header h1 {
+    font-size: 2.5em;
+  }
+}

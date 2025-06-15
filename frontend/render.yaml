@@ -1,0 +1,15 @@
+name: cultura-club-frontend
+github_repo: danielchoi001/brand-analysis-app
+branch: main
+
+environment:
+  type: static
+  build_command: npm run build
+  start_command: npm start
+
+regions:
+  - seo
+
+env_vars:
+  - key: REACT_APP_API_URL
+    value: https://cultura-club-backend.onrender.com
